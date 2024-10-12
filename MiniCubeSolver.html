@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Rubik's Mini Cube Solver</title>
+<script src="https://cjrtnc.leaningtech.com/2.3/loader.js"></script>
+ <script>cheerpjInit({enablePreciseAppletArchives:true});</script>
+ <script src=kb.js></script>
+ <script>kb(1, 100, 1200)</script>
+ <script src=rt.js></script>
+ <script>rt(1,500,120)</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<applet code="MiniCubeSolverApplet.class" width="750" height="500"></applet>
+
+<h3>Explanation</h3>
+
+<u>Version</u><br>
+This is version 1.0 of my Rubik's MiniCubeSolver applet. I built it using Symantec Visual Café 3.<br>
+<br>
+
+<u>Features</u><br>
+Using this applet you are able to:
+<ul>
+<li><b>Play</b> with mini cube (Move mode).</li>
+<li><b>Setup</b> a position of the mini cube (Setup mode).</li>
+<li>Find the shortest algorithm(s) to <b>solve</b> a position of the mini cube.</li>
+</ul>
+
+<u>Playing with the mini cube</u><br>
+Set the applet into Move mode, by clicking the option "Move mode".<br>
+You can now move all sides of the cube by clicking on a cubie, keeping the mouse button down, and releasing the mouse button on a neighboring cubie.<br>
+After scrambling the cube, the moves are counted. After the first move time starts running, and is shown after each move.<br>
+<br>
+
+<u>Setting up the mini cube</u><br>
+Set the applet into Setup mode, by clicking the option "Setup mode".<br>
+Click on a color in the palet to make the color the active color.<br>
+Now click on a cubie of the cube. The color of the cubie will be set to the active color of the
+palet.<br>
+<br>
+
+<u>Solving a position of the cube</u><br>
+By setting up the cubies or moving the sides of the cube you can build a position that you want to be solved. If you do not care about certain cubies, you can set their color to gray.<br>
+Next you can tell MiniCubeSolver which moves are allowed to solve the cube, using the options in the bottom of the applet. The fewer possible moves, the sooner MiniCubeSolver will be finished. This feature might also be handy in the following situations:
+<ul>
+<li>You want to find a solution of Rubik's Domino. With Rubik's Domino it is not possible to use quarter turns for the L, R, F and B sides.</li>
+<li>You want to find a solution for the Two Generator family. Two Generator family means scrambling and solving the cube using only moves on two sides
+  (f.i. only R and U turns).</li>
+</ul>
+<b>You can only set moves of the sides U, F and R. This is because moving the left side, is the same as moving the right
+side!<br>
+</b>
+<br>
+Next tell MiniCubeSolver whether it must stop after finding one solution, or it can continue checking all possible moves.<br>
+Finally you can tell MiniCubeSolver how deep it must look for solutions. The deeper it looks, the longer it takes. Rubik's Mini Cube has only  <b>3,674,160</b> different positions. Of those positions, only 2,644 take the maximum depth of 11 moves.<br>
+The current version of MiniCubeSolver is able to check all moves at a depth of 11 within 10 minutes. A good start would be to start checking depth 10. This takes a minute and a half, and you have a very big chance that a solution is found.<br>
+<br>
+
+<u>Time the applet needs to look for a solution</u><br>
+If all moves are allowed, MiniCubeSolver takes the following time to check all positions at a certain depth:<br>
+<br>
+<table border="1" width="481">
+<tr><td width="67" align="center"># of moves</td><td width="154">Solving time</td><td width="119" align="right">Cum. # of positions</td><td width="113" align="right"># of different positions</td></tr>
+<tr><td width="67" align="center">1</td><td width="154">less than a second</td><td width="119" align="right">9</td><td width="113" align="right">9</td></tr>
+<tr><td width="67" align="center">2</td><td width="154">less than a second</td><td width="119" align="right">63</td><td width="113" align="right">54</td></tr>
+<tr><td width="67" align="center">3</td><td width="154">less than a second</td><td width="119" align="right">387</td><td width="113" align="right">321</td></tr>
+<tr><td width="67" align="center">4</td><td width="154">less than a second</td><td width="119" align="right">2,331</td><td width="113" align="right">1,847</td></tr>
+<tr><td width="67" align="center">5</td><td width="154">less than a second</td><td width="119" align="right">13,995</td><td width="113" align="right">9,992</td></tr>
+<tr><td width="67" align="center">6</td><td width="154">less than a second</td><td width="119" align="right">83,979</td><td width="113" align="right">50,136</td></tr>
+<tr><td width="67" align="center">7</td><td width="154">less than a second</td><td width="119" align="right">503,883</td><td width="113" align="right">227,536</td></tr>
+<tr><td width="67" align="center">8</td><td width="154">a few seconds</td><td width="119" align="right">3,023,307</td><td width="113" align="right">870,072</td></tr>
+<tr><td width="67" align="center">9</td><td width="154">twenty seconds</td><td width="119" align="right">18,139,851</td><td width="113" align="right">1,887,748</td></tr>
+<tr><td width="67" align="center">10</td><td width="154">a minute and a half</td><td width="119" align="right">108,839,115</td><td width="113" align="right">623,800</td></tr>
+<tr><td width="67" align="center">11</td><td width="154">ten minutes</td><td width="119" align="right">653,034,699</td><td width="113" align="right">2,644</td></tr>
+</table>
+<br>
+These times have been measured using a Pentium II 350 MHz with 128MB internal memory. On such a machine MiniCubeSolver can check about 1 million positions per second.<br>
+<br>
+
+<u>Example of solving</u><br>
+For an example of solving, please take a look at the <a href="CubeSolver.html">example for the standard Rubik's cube</a> (<a href="CubeSolverBlock/CubeSolverBlock.html">newer version</a>).<br>
+<br>
+
+Good luck!<br>
+<br>
+
+<h5>Last update: November 26, 2000.</h5>
+
+</body>
+</html>

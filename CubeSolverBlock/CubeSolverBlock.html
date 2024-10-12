@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>CubeSolver</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="https://cjrtnc.leaningtech.com/2.3/loader.js"></script>
+ <script>cheerpjInit({enablePreciseAppletArchives:true});</script>
+ <script src=kb.js></script>
+ <script>kb(1, 100, 1200)</script>
+ <script src=rt.js></script>
+ <script>rt(1,500,120)</script>
+</head>
+<body>
+<applet code="RubikCubeSolverApplet.class" width="750" height="500"></applet>
+
+<h3>Explanation</h3>
+
+<u>Version</u><br>
+This is version 0.94 of my CubeSolver applet. I built it using Visual Café 4.1a.<br>
+<b>THIS IS STILL A DEBUG VERSION.<br>
+DO NOT TRUST THE RESULTS WHEN YOU COMBINE THE PRUNE TABLES WITH THE OPTION 'IGNORE CUBIES'. You could miss algorithms.<br>
+The Possible moves option works fine with prune tables.</b><br>
+<br>
+
+<u>Features</u><br>
+Using this applet you are able to:
+<ul>
+<li><b>Play</b> with the cube (Left mouse button).</li>
+<li><b>Setup</b> a position of the cube (Right mouse button).</li>
+<li>Find the shortest algorithm(s) to <b>solve</b> a position of the cube.</li>
+</ul>
+
+<u>Playing with the cube</u><br>
+You can move all sides and slices of the cube by clicking on a cubie with the left mouse button, keeping the mouse button down, and releasing the mouse button on a neighboring cubie.<br>
+You cannot rotate the cube. Use the <a href="../CubeSolver.html"> sticker mode applet </a> if you need rotation and slice moves.<br>
+After scrambling the cube, the moves are counted. After the first move time starts running, and is shown after each move.<br>
+<br>
+
+<u>Setting up the cube</u><br>
+This applet is based upon block mode. This means that when you setup the cube, you can change the orientation and position of each individual
+cubie, but not of each individual sticker on the cube. This makes it easy to set up the cube.<br>
+You can change the orientation of a cubie by right clicking on it.<br>
+You can change the position of a cubie by dragging the cubie with the right mouse button to the wanted position.<br>
+You can ignore a cubie by keeping down CTRL while right clicking on it.<br>
+You can ignore the orientation of a cubie by keeping down ALT while right clicking on it.<br>
+<br>
+I will soon add a description of what the prune tables are all about. The prune tables make solving at least a factor 10,000 faster.<br>
+<br>
+
+<u>Solving a position of the cube</u><br>
+By setting up the cubies or moving the sides and slices of the cube you can build a position that you want to be solved. If you do not care about certain stickers, you can set their color to gray.<br>
+Next you can tell CubeSolver which moves are allowed to solve the cube, using the options in the bottom of the applet. The fewer possible moves, the sooner CubeSolver will be finished. This feature might also be handy in the following situations:
+<ul>
+<li>You want to find a solution of Rubik's Domino. With Rubik's Domino it is not possible to use quarter turns for the L, R, F and B sides.</li>
+<li>You want to find a solution for the Two Generator family. Two Generator family means scrambling and solving the cube using only moves on two sides (f.i. only R and U turns).</li>
+</ul>
+
+Next tell CubeSolver whether it must stop after finding one solution, or it can continue checking all possible moves.<br>
+Finally you can tell CubeSolver how deep it must look for solutions. The deeper it looks, the longer it takes. Remember that Rubik's Cube has an enormous number of possible positions: <b>4.3 * 10^19 positions</b>. If you were able to check 10 million positions per second , it would still take 4.3 * 10^12 seconds (136 thousand years!) to reach all possible positions.<br>
+The current version of CubeSolver is able to check all moves at a depth of 9 within 4 hours. So forget about it if you want to find a solution at depth 12 or so.<br>
+<br>
+
+<u>Example of solving</u><br>
+Suppose you want to find the shortest algorithm for the situation below. It is one of the situations for building two layers. In this case you do not care about what happens to the last layer.<br>
+<br>
+
+<img height="148" width="98" src="../c1e2_a15.gif"><br>
+<br>
+<br>
+If you already know an algorithm of seven moves for this situation, setup CubeSolver like this:<br>
+<br>
+<img src="../CubeSolver_example.gif" width="708" height="472"><br>
+<br>
+Within two minutes CubeSolver will find all solutions with a maximum of seven moves. In this case it will even find three solutions of six moves.<br>
+<br>
+Good luck!<br>
+<br>
+
+<h5>Last update: April 20, 2001.</h5>
+
+</body>
+</html>

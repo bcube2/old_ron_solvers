@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>CubeSolver</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="https://cjrtnc.leaningtech.com/2.3/loader.js"></script>
+ <script>cheerpjInit({enablePreciseAppletArchives:true});</script>
+ <script src=kb.js></script>
+ <script>kb(1, 100, 1200)</script>
+ <script src=rt.js></script>
+ <script>rt(1,500,120)</script>
+</head>
+<body>
+<applet code="RubikCubeSolverApplet.class" alt="CubeSolver Java applet" width="750" height="500"></applet>
+
+<h3>Explanation</h3>
+
+<u>Version</u><br>
+This is version 0.93 of my CubeSolver applet. I built it using Visual Café 4.1a.<br>
+<br>
+
+<u>Features</u><br>
+Using this applet you are able to:
+<ul>
+<li><b>Play</b> with the cube (Left mouse button).</li>
+<li><b>Setup</b> a position of the cube (Right mouse button).</li>
+<li>Find the shortest algorithm(s) to <b>solve</b> a position of the cube.</li>
+</ul>
+
+<u>Playing with the cube</u><br>
+You can move all sides and slices of the cube by clicking on a cubie with the left mouse button, keeping the mouse button down, and releasing the mouse button on a neighboring cubie.<br>
+You can rotate the cube, by holding the CTRL-key and then moving the middle cubie of a side with the left mouse button.<br>
+After scrambling the cube, the moves are counted. After the first move time starts running, and is shown after each move.<br>
+<br>
+
+<u>Setting up the cube</u><br>
+This applet is based upon sticker mode. This means that when you setup the cube, you can change the color of individual stickers. This makes it easy to setup the cube, and it is possible to check for parts of the cubies instead of only complete cubies.<br>
+Click on a color in the palette to make the color the active color.<br>
+Now right click on a sticker of the cube. The color of the sticker will be set to the active color of the palette.<br>
+<br>
+
+<u>Solving a position of the cube</u><br>
+By setting up the cubies or moving the sides and slices of the cube you can build a position that you want to be solved. If you do not care about certain stickers, you can set their color to gray.<br>
+Next you can tell CubeSolver which moves are allowed to solve the cube, using the options in the bottom of the applet. The fewer possible moves, the sooner CubeSolver will be finished. This feature might also be handy in the following situations:
+<ul>
+<li>You want to find a solution of Rubik's Domino. With Rubik's Domino it is not possible to use quarter turns for the L, R, F and B sides.</li>
+<li>You want to find a solution for the Two Generator family. Two Generator family means scrambling and solving the cube using only moves on two sides (f.i. only R and U turns).</li>
+</ul>
+
+Next tell CubeSolver whether it must stop after finding one solution, or it can continue checking all possible moves.<br>
+Finally you can tell CubeSolver how deep it must look for solutions. The deeper it looks, the longer it takes. Remember that Rubik's Cube has an enormous number of possible positions: <b>4.3 * 10^19 positions</b>. If you were able to check 10 million positions per second , it would still take 4.3 * 10^12 seconds (136 thousand years!) to reach all possible positions.<br>
+The current version of CubeSolver is able to check all moves at a depth of 9 within 4 hours. So forget about it if you want to find a solution at depth 12 or so.<br>
+<br>
+
+<u>Time the applet needs to look for a solution</u><br>
+If all moves are allowed, CubeSolver takes the following time to check all positions at a certain depth:<br>
+<br>
+<table border="1" width="395">
+  <tr>
+    <td align="center" width="69"># of moves</td>
+    <td width="152">Solving time</td>
+    <td width="152" align="right"># of positions</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">1</td>
+    <td width="152"> less than a second</td>
+    <td width="152" align="right">18</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">2</td>
+    <td width="152"> less than a second</td>
+    <td width="152" align="right">270</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">3</td>
+    <td width="152"> less than a second</td>
+    <td width="152" align="right">4,050</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">4</td>
+    <td width="152"> less than a second</td>
+    <td width="152" align="right">60,750</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">5</td>
+    <td width="152"> less than a second</td>
+    <td width="152" align="right">911,250</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">6</td>
+    <td width="152"> a few seconds</td>
+    <td width="152" align="right">13,668,750</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">7</td>
+    <td width="152"> two minutes</td>
+    <td width="152" align="right">205,031,250</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">8</td>
+    <td width="152"> 15 minutes</td>
+    <td width="152" align="right">3,075,468,750</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">9</td>
+    <td width="152"> 4 hours</td>
+    <td width="152" align="right">46,132,031,250</td>
+  </tr>
+  <tr>
+    <td align="center" width="69">10</td>
+    <td width="152"> 40 hours</td>
+    <td width="152" align="right">691,980,468,750</td>
+  </tr>
+</table>
+<br>
+These times have been measured using a Pentium II 350 MHz with 128MB internal memory. On such a machine CubeSolver can check about 1.3 million positions per second. CubeSolver has some intelligence in it, so that it does not need to check all moves. This is possible because there are a lot of mirrored moves.
+Therefore at level 9 CubeSolver needs to check 19.8 billion positions instead of the cumulative 50 billion positions mentioned in the table.<br>
+<br>
+
+<u>Example of solving</u><br>
+Suppose you want to find the shortest algorithm for the situation below. It is one of the situations for building two layers. In this case you do not care about what happens to the last layer. Therefore a lot of stickers can be set to gray, which means 'ignore stickers'.<br>
+<br>
+
+<img src="c1e2_a15.gif" height="148" width="98"><br>
+<br>
+<br>
+If you already know an algorithm of seven moves for this situation, setup CubeSolver like this:<br>
+<br>
+<img src="CubeSolver_example.gif" width="708" height="472"><br>
+<br>
+Within two minutes CubeSolver will find all solutions with a maximum of seven moves. In this case it will even find three solutions of six moves.<br>
+<br>
+Good luck!<br>
+<br>
+
+Last update: March 17, 2001.<br>
+
+<!--ONESTAT SCRIPTCODE START-->
+<!--
+// Het wijzigen van deze code is niet toegestaan en zal uw account definitief blokkeren!
+// Account ID : 491724
+// Website URL: http://www.speedcubing.com
+// Copyright (C) 2002-2007 OneStat.com All Rights Reserved
+-->
+<div id="OneStatTag" align="right"><table border='0' cellpadding='0' cellspacing='0'><tr><td align='center'>
+<script type="text/javascript">
+<!--
+function OneStat_Pageview()
+{
+    var d=document;
+    var sid="491724";
+    var CONTENTSECTION="";
+    var osp_URL=d.URL;
+    var osp_Title=d.title;
+    var t=new Date();
+    var p="http"+(d.URL.indexOf('https:')==0?'s':'')+"://stat.onestat.com/stat.aspx?tagver=2&sid="+sid;
+    p+="&url="+escape(osp_URL);
+    p+="&ti="+escape(osp_Title);
+    p+="&section="+escape(CONTENTSECTION);
+    p+="&rf="+escape(parent==self?document.referrer:top.document.referrer);
+    p+="&tz="+escape(t.getTimezoneOffset());
+    p+="&ch="+escape(t.getHours());
+    p+="&js=1";
+    p+="&ul="+escape(navigator.appName=="Netscape"?navigator.language:navigator.userLanguage);
+    if(typeof(screen)=="object"){
+       p+="&sr="+screen.width+"x"+screen.height;p+="&cd="+screen.colorDepth;
+       p+="&jo="+(navigator.javaEnabled()?"Yes":"No");
+    }
+    d.write('<a href="http://www.onestat.com/aspx/login.aspx?sid='+sid+'" target=_blank><img id="ONESTAT_TAG" border="0" src="'+p+'" alt="This site tracked by OneStat.com. Get your own free site counter."></'+'a>');
+}
+
+OneStat_Pageview();
+//-->
+</script>
+<noscript>
+<a href="http://www.onestat.com"><img border="0" src="http://stat.onestat.com/stat.aspx?tagver=2&amp;sid=491724&amp;js=No&amp;" ALT="remote monitoring ping"></a>
+</noscript>
+</td></tr><tr><td align='center'><div style="COLOR:black;display:none;FONT-FAMILY:'Verdana';"><a href="http://www.onestat.com/uptrends/uptrends_website_server_monitoring.html" style="text-decoration:none;">remote monitoring ping</a><br></div></td></tr></table></div>
+<!--ONESTAT SCRIPTCODE END-->
+
+
+</body>
+</html>
